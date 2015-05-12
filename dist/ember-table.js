@@ -1547,6 +1547,7 @@ var define, requireModule, require, requirejs;
   ["exports"],
   function(__exports__) {
     "use strict";
+<<<<<<< HEAD
     __exports__["default"] = Ember.HTMLBars.template((function() {
       return {
         isHTMLBars: true,
@@ -1589,6 +1590,24 @@ var define, requireModule, require, requirejs;
         }
       };
     }()));
+=======
+    var Ember = __dependency1__["default"];
+    __exports__["default"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+    this.compilerInfo = [4,'>= 1.0.0'];
+    helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+      var buffer = '', escapeExpression=this.escapeExpression;
+
+
+      data.buffer.push(escapeExpression(helpers.view.call(depth0, "multi-item-collection", {hash:{
+        'content': ("view.content"),
+        'itemViewClassField': ("headerCellViewClass"),
+        'width': ("controller._tableColumnsWidth")
+      },hashTypes:{'content': "ID",'itemViewClassField': "STRING",'width': "ID"},hashContexts:{'content': depth0,'itemViewClassField': depth0,'width': depth0},contexts:[depth0],types:["STRING"],data:data})));
+      data.buffer.push("\n");
+      return buffer;
+      
+    });
+>>>>>>> changes binding syntax from xBinding="var" to x=var
   });
 ;define("ember-table/templates/header-table-container", 
   ["exports"],
@@ -1808,6 +1827,7 @@ var define, requireModule, require, requirejs;
   ["exports"],
   function(__exports__) {
     "use strict";
+<<<<<<< HEAD
     __exports__["default"] = Ember.HTMLBars.template((function() {
       return {
         isHTMLBars: true,
@@ -1850,6 +1870,25 @@ var define, requireModule, require, requirejs;
         }
       };
     }()));
+=======
+    var Ember = __dependency1__["default"];
+    __exports__["default"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+    this.compilerInfo = [4,'>= 1.0.0'];
+    helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+      var buffer = '', escapeExpression=this.escapeExpression;
+
+
+      data.buffer.push(escapeExpression(helpers.view.call(depth0, "multi-item-collection", {hash:{
+        'row': ("view.row"),
+        'content': ("view.columns"),
+        'itemViewClassField': ("tableCellViewClass"),
+        'width': ("controller._tableColumnsWidth")
+      },hashTypes:{'row': "ID",'content': "ID",'itemViewClassField': "STRING",'width': "ID"},hashContexts:{'row': depth0,'content': depth0,'itemViewClassField': depth0,'width': depth0},contexts:[depth0],types:["STRING"],data:data})));
+      data.buffer.push("\n");
+      return buffer;
+      
+    });
+>>>>>>> changes binding syntax from xBinding="var" to x=var
   });
 ;define("ember-table/views/body-table-container", 
   ["ember","ember-table/views/table-container","ember-table/mixins/show-horizontal-scroll","ember-table/mixins/register-table-component","ember-table/mixins/mouse-wheel-handler","ember-table/mixins/touch-move-handler","ember-table/mixins/scroll-handler","exports"],
