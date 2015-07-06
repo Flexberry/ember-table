@@ -157,6 +157,7 @@ var define, requireModule, require, requirejs;
       obj = reified.module.exports;
     } else {
       obj = seen[name] = module;
+<<<<<<< HEAD
     }
 
     if (obj !== null &&
@@ -165,6 +166,16 @@ var define, requireModule, require, requirejs;
       obj['default'] = obj;
     }
 
+=======
+    }
+
+    if (obj !== null &&
+        (typeof obj === 'object' || typeof obj === 'function') &&
+          obj['default'] === undefined) {
+      obj['default'] = obj;
+    }
+
+>>>>>>> Rebuilt ember-table dist
     return (seen[name] = obj);
   };
 
