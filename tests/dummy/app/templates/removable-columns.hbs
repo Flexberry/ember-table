@@ -13,23 +13,25 @@
           {{/each}}
         </div>
         <div class="ember-table-example-container">
-          {{partial "removable-columns/removable-columns-table"}}
+          {{!// BEGIN-SNIPPET removable-columns-table}}
+          {{ember-table
+            hasFooter=false
+            columns=withoutRemovedColumns
+            content=tableContent
+          }}
+          {{!// END-SNIPPET}}
         </div>
       </div>
     </div>
 
     <div class="col-md-12 bumper-30">
       <h3>Template</h3>
-      <div class="highlight">
-        <pre class="prettyprint lang-html">@@{templates/removable-columns/removable-columns-table.hbs}</pre>
-      </div>
+      {{code-snippet name="removable-columns-table.hbs"}}
     </div>
 
     <div class="col-md-12 bumper-30">
       <h3>Controller</h3>
-      <div class="highlight">
-        <pre class="prettyprint lang-js">@@{controllers/removable-columns.js}</pre>
-      </div>
+      {{code-snippet name="removable-columns-controller.js"}}
     </div>
   </div>
 </div>
