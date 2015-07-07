@@ -4,6 +4,7 @@ import {
   test
   } from 'qunit';
 import startApp from '../helpers/start-app';
+import {setRandomSeed} from 'dummy/utils/random';
 
 var application;
 
