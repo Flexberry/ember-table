@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import ColumnDefinition from 'ember-table/models/column-definition';
-import random from '../utils/random';
+import {randomNumber, randomDate, setRandomSeed} from '../utils/random';
 
 export default Ember.Controller.extend({
   tableColumns: Ember.computed(function() {
@@ -46,16 +46,16 @@ export default Ember.Controller.extend({
   tableContent: Ember.computed(function() {
     var content = [];
     var date;
+    setRandomSeed(6);
     for (var i = 0; i < 100; i++) {
-      date = new Date();
-      date.setDate(date.getDate() + i);
+      date = randomDate(new Date(2000, 1, 5), new Date(2012, 2, 2));
       content.pushObject({
         date: date,
-        open: random(100) - 50,
-        high: random(100) - 50,
-        low: random(100) - 50,
-        close: random(100) - 50,
-        volume: random(100) * 1000000
+        open: randomNumber(100) - 50,
+        high: randomNumber(100) - 50,
+        low: randomNumber(100) - 50,
+        close: randomNumber(100) - 50,
+        volume: randomNumber(100) * 1000000
       });
     }
     return content;
