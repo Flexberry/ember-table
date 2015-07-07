@@ -10,6 +10,7 @@ var application;
 module('Acceptance: Simple', {
   beforeEach: function() {
     application = startApp();
+    setRandomSeed(6);
   },
 
   afterEach: function() {

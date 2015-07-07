@@ -1,0 +1,35 @@
+<div class="col-md-10 col-md-offset-2 left-border main-content-container">
+  <h1>Ember Table <small>Removable Columns</small></h1>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="example-container">
+        <div class="form-group">
+          <label>Toggle</label>
+          {{#each tableColumns as |column|}}
+            <button type="button" class="btn btn-lg btn-default btn-sm {{if (array-contains removed column.headerCellName) 'active'}}"
+                    {{action 'toggleColumn' column.headerCellName}}
+                    >{{column.headerCellName}}</button>
+          {{/each}}
+        </div>
+        <div class="ember-table-example-container">
+          {{partial "removable-columns/removable-columns-table"}}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 bumper-30">
+      <h3>Template</h3>
+      <div class="highlight">
+        <pre class="prettyprint lang-html">@@{templates/removable-columns/removable-columns-table.hbs}</pre>
+      </div>
+    </div>
+
+    <div class="col-md-12 bumper-30">
+      <h3>Controller</h3>
+      <div class="highlight">
+        <pre class="prettyprint lang-js">@@{controllers/removable-columns.js}</pre>
+      </div>
+    </div>
+  </div>
+</div>
