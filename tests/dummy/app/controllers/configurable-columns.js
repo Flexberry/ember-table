@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import ConfigurableColumnDefinition from
   '../views/configurable-column-definition';
-import {randomNumber, randomDate, setRandomSeed} from '../utils/random';
+import {randomNumber, randomDate} from '../utils/random';
 
 
 export default Ember.Controller.extend({
@@ -64,7 +64,6 @@ export default Ember.Controller.extend({
   }),
 
   content: Ember.computed(function() {
-    setRandomSeed(6);
     var content = [];
     var date;
     for (var i = 0; i < 100; i++) {

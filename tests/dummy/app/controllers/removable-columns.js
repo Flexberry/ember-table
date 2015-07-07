@@ -3,6 +3,17 @@ import ColumnDefinition from 'ember-table/models/column-definition';
 import {randomNumber, randomDate} from '../utils/random';
 
 export default Ember.Controller.extend({
+  queryParams: ['removed'],
+  removed: [],
+  withoutRemovedColumns: Ember.computed(
+    'removed.[]',
+    'tableColumns.[]',
+    function(){
+      let removed = this.get('removed');
+      return this.get('tableColumns').filter(function(column){
+        return !removed.contains(column.get('headerCellName'));
+      });
+  }),
   tableColumns: Ember.computed(function() {
     var dateColumn = ColumnDefinition.create({
       savedWidth: 150,
@@ -42,7 +53,6 @@ export default Ember.Controller.extend({
     });
     return [dateColumn, openColumn, highColumn, lowColumn, closeColumn];
   }),
-
   tableContent: Ember.computed(function() {
     var content = [];
     var date;
@@ -58,5 +68,15 @@ export default Ember.Controller.extend({
       });
     }
     return content;
-  })
+  }),
+  actions: {
+    toggleColumn(headerCellName) {
+      let removed = this.get('removed');
+      if (removed.contains(headerCellName)) {
+        removed.removeObject(headerCellName);
+      } else {
+        removed.pushObject(headerCellName);
+      }
+    }
+  }
 });
