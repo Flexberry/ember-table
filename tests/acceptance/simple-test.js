@@ -22,6 +22,6 @@ test('visiting /simple', function(assert) {
   andThen(function() {
     assert.equal(currentPath(), 'simple');
     assert.deepEqual(rowText(0), ['Date', 'Open', 'High', 'Low', 'Close'], "headers");
-    assert.deepEqual(rowText(1), ['Tue Jul 07 2015', '-4.95', '22.49', '-18.01', '-47.10'], "values in first row");
+    assert.deepEqual(rowText(1), ['Thu Jul 14 2005', '22.49', '-18.01', '-47.10', '-0.30'], "values in first row");
   });
 });
