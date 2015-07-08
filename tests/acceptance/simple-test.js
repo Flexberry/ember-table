@@ -19,7 +19,7 @@ module('Acceptance: Simple', {
   }
 });
 
-test('visiting /simple', function(assert) {
+test('table renders', function(assert) {
   visit('/simple');
   andThen(function() {
     assert.equal(currentPath(), 'simple');
