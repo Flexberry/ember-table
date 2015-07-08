@@ -19,7 +19,7 @@ module('Acceptance: Configurable Columns', {
   }
 });
 
-test('visiting /configurable-columns', function(assert) {
+test('table renders', function(assert) {
   visit('/configurable-columns');
   andThen(function() {
     assert.equal(currentPath(), 'configurable-columns');
