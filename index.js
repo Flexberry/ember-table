@@ -8,7 +8,11 @@ module.exports = {
 
     app.import(app.bowerDirectory + '/antiscroll/antiscroll.js');
     app.import(app.bowerDirectory + '/antiscroll/antiscroll.css');
-    app.import(app.bowerDirectory + '/jquery-ui/jquery-ui.js');
+    app.import(app.bowerDirectory + '/jquery-ui/ui/core.js');
+    app.import(app.bowerDirectory + '/jquery-ui/ui/widget.js');
+    app.import(app.bowerDirectory + '/jquery-ui/ui/mouse.js');
+    app.import(app.bowerDirectory + '/jquery-ui/ui/resizable.js');
+    app.import(app.bowerDirectory + '/jquery-ui/ui/sortable.js');
     app.import(app.bowerDirectory + '/jquery-mousewheel/jquery.mousewheel.js');
   },
 
